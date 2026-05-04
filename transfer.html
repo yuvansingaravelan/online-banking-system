@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer</title>
+    </head>
+    <body>
+    
+    <h2>Transfer Money</h2>
+    
+    <input type="text" id="receiver" placeholder="Receiver Name"><br><br>
+    <input type="number" id="amount" placeholder="Amount"><br><br>
+    
+    <button onclick="send()">Send</button><br><br>
+    
+    <a href="transactions.html">Go to Transactions</a><br><br>
+    <a href="balance.html">Back</a>
+    
+    <script>
+    function send() {
+        let receiver = document.getElementById("receiver").value;
+            let amount = document.getElementById("amount").value;
+            
+                // validation
+                    if (receiver === "" || amount === "") {
+                            alert("Enter details properly");
+                                    return;
+                                        }
+                                        
+                                            // get previous transactions
+                                                let data = JSON.parse(localStorage.getItem("t")) || [];
+                                                
+                                                    // add new transaction
+                                                        data.push("₹" + amount + " → " + receiver);
+                                                        
+                                                            // save back
+                                                                localStorage.setItem("t", JSON.stringify(data));
+                                                                
+                                                                    alert("Transfer Successful");
+                                                                    }
+                                                                    </script>
+                                                                    
+                                                                    </body>
+                                                                    </html>>
