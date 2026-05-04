@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Transactions</h2>
+
+<ul id="list"></ul>
+
+<a href="balance.html">Back</a>
+
+<script>
+let data = JSON.parse(localStorage.getItem("t")) || [];
+data.forEach(x => {
+    let li = document.createElement("li");
+        li.innerText = x;
+            list.appendChild(li);
+            });
+            </script>
+            
+            </body>
+            </html>>
